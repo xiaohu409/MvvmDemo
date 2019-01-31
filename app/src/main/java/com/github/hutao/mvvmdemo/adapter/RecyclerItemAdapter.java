@@ -1,15 +1,18 @@
 package com.github.hutao.mvvmdemo.adapter;
 
 import android.content.Context;
+import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.github.hutao.mvvmdemo.R;
 import com.github.hutao.mvvmdemo.bean.ListBean;
 import com.github.hutao.mvvmdemo.databinding.RecyclerItemBinding;
+import com.github.hutao.mvvmdemo.util.GlideUtil;
 
 import java.util.List;
 
@@ -59,5 +62,10 @@ public class RecyclerItemAdapter extends RecyclerView.Adapter<RecyclerItemAdapte
         return list.size();
     }
 
+    @BindingAdapter("android:src")
+    public static void loadImage(ImageView imageView, String url) {
+//        ImageLoaderUtil.displayImage(url, imageView);
+        GlideUtil.loadImage(url, imageView);
+    }
 
 }

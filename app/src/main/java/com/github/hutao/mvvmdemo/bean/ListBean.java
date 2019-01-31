@@ -1,5 +1,10 @@
 package com.github.hutao.mvvmdemo.bean;
 
+import android.databinding.BaseObservable;
+import android.databinding.Bindable;
+
+import com.github.hutao.mvvmdemo.BR;
+
 import java.util.List;
 
 /**
@@ -49,13 +54,25 @@ public class ListBean {
         this.rowBeanList = rowBeanList;
     }
 
-    public static class RowBean {
+    @Override
+    public String toString() {
+        return "ListBean{" +
+                "isError=" + isError +
+                ", isWare=" + isWare +
+                ", msg='" + msg + '\'' +
+                ", rowBeanList=" + rowBeanList +
+                '}';
+    }
+
+    public static class RowBean extends BaseObservable {
 
         private String username;
         private int age;
         private String mobile;
+        private String head;
+        private int count;
 
-
+        @Bindable
         public String getUsername() {
             return username;
         }
@@ -63,7 +80,7 @@ public class ListBean {
         public void setUsername(String username) {
             this.username = username;
         }
-
+        @Bindable
         public int getAge() {
             return age;
         }
@@ -71,13 +88,41 @@ public class ListBean {
         public void setAge(int age) {
             this.age = age;
         }
-
+        @Bindable
         public String getMobile() {
             return mobile;
         }
 
         public void setMobile(String mobile) {
             this.mobile = mobile;
+        }
+        @Bindable
+        public String getHead() {
+            return head;
+        }
+
+        public void setHead(String head) {
+            this.head = head;
+        }
+        @Bindable
+        public int getCount() {
+            return count;
+        }
+
+        public void setCount(int count) {
+            this.count = count;
+            notifyPropertyChanged(BR.count);
+        }
+
+        @Override
+        public String toString() {
+            return "RowBean{" +
+                    "username='" + username + '\'' +
+                    ", age=" + age +
+                    ", mobile='" + mobile + '\'' +
+                    ", head='" + head + '\'' +
+                    ", count=" + count +
+                    '}';
         }
     }
 }

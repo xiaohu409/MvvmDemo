@@ -9,9 +9,17 @@
             type="com.github.hutao.mvvmdemo.bean.ListBean.RowBean" />
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:id="@+id/image_id"
+            tools:src="@mipmap/ic_launcher"
+            android:src="@{item.head}"/>
 
         <TextView
             android:id="@+id/textView"
@@ -21,9 +29,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             tools:text="name"
-            android:text="@{item.username}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@{item.username}" />
 
         <TextView
             android:id="@+id/textView2"
@@ -33,9 +39,7 @@
             android:layout_marginLeft="24dp"
             android:layout_marginTop="8dp"
             tools:text="age"
-            android:text="@{String.valueOf(item.age)}"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@{String.valueOf(item.age)}"/>
 
         <TextView
             android:id="@+id/textView3"
@@ -45,9 +49,14 @@
             android:layout_marginLeft="24dp"
             android:layout_marginTop="8dp"
             android:text="@{item.mobile}"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="parent"
             tools:text="mobile" />
-    </android.support.constraint.ConstraintLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(item.count)}"
+            android:id="@+id/et_id"
+            tools:text="1"/>
+    </LinearLayout>
 </layout>
 
