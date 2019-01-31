@@ -22,7 +22,7 @@ import java.util.List;
  * 日期：  2018/12/8
  * 版本：  v1.0
  */
-public class RecyclerViewActivity extends AppCompatActivity implements BaseI, View.OnClickListener {
+public class RecyclerViewActivity extends AppCompatActivity implements BaseI {
 
     private List<ListBean.RowBean> rowBeanList;
     private RecyclerItemAdapter recyclerAdapter;
@@ -41,13 +41,10 @@ public class RecyclerViewActivity extends AppCompatActivity implements BaseI, Vi
         rowBeanList = new ArrayList<>();
         recyclerAdapter = new RecyclerItemAdapter(this, rowBeanList);
         binding.recyclerViewId.setAdapter(recyclerAdapter);
-        binding.lookBtnId.setOnClickListener(this);
     }
 
     @Override
     public void bindData() {
-
-
         for (int i = 0; i < 10; i++) {
             ListBean.RowBean bean = new ListBean.RowBean();
             bean.setHead("https://image.34xian.com/Product/2018/06/28/m_9b28d413213a41ff90609f3c6a75e2ba.jpg");
@@ -58,14 +55,5 @@ public class RecyclerViewActivity extends AppCompatActivity implements BaseI, Vi
             rowBeanList.add(bean);
         }
         recyclerAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.look_btn_id:
-                System.out.println(rowBeanList);
-                break;
-        }
     }
  }

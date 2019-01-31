@@ -8,26 +8,9 @@
             <!--type="com.github.hutao.mvvmdemo.adapter.RecyclerItemAdapter" />-->
     <!--</data>-->
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/recycler_view_id"-->
-        <!--android:adapter="@{adapter}"/>-->
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/recycler_view_id"
-            android:layout_weight="1"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="查看bean"
-            android:id="@+id/look_btn_id"/>
-    </LinearLayout>
+        android:id="@+id/recycler_view_id" />
 
 </layout>
