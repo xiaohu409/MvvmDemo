@@ -1,6 +1,7 @@
 package com.github.hutao.mvvmdemo;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.widget.Button;
 
 import com.github.hutao.mvvmdemo.activity.RecyclerViewActivity;
 import com.github.hutao.mvvmdemo.base.BaseI;
+import com.github.hutao.mvvmdemo.databinding.ActivityMainBinding;
+import com.github.hutao.mvvmdemo.mvvm.view.LoginActivity;
 
 
 /**
@@ -22,15 +25,15 @@ public class MainActivity extends AppCompatActivity implements BaseI, View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         initUI();
         bindData();
     }
 
     @Override
     public void initUI() {
-        Button recyclerBtn = findViewById(R.id.recycler_view_btn_id);
-        recyclerBtn.setOnClickListener(this);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.recyclerViewBtnId.setOnClickListener(this);
+        binding.loginBtnId.setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +43,10 @@ public class MainActivity extends AppCompatActivity implements BaseI, View.OnCli
                 //recycler view;
                 startActivity(new Intent(this, RecyclerViewActivity.class));
                 break;
+            case R.id.login_btn_id:
+                //login
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
         }
     }
 
@@ -47,4 +54,5 @@ public class MainActivity extends AppCompatActivity implements BaseI, View.OnCli
     public void bindData() {
 
     }
+
 }

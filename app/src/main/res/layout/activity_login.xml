@@ -3,37 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_id"
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="mvvm简单示例"
-            android:gravity="center_horizontal"
-            android:textSize="32dp"
-            android:layout_margin="16dp"/>
-        <Button
+            android:hint="用户名"
+            android:id="@+id/username_et_id"
+            android:singleLine="true"/>
+
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RecyclerView"
-            android:layout_margin="16dp"
-            android:id="@+id/recycler_view_btn_id" />
+            android:hint="密码"
+            android:id="@+id/pass_et_id"
+            android:inputType="textPassword"
+            android:singleLine="true"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="登录"
-            android:layout_margin="16dp"
             android:id="@+id/login_btn_id"/>
     </LinearLayout>
+
 </layout>
-
-
