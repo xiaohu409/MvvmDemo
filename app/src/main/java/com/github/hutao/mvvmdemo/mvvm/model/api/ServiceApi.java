@@ -12,14 +12,14 @@ import retrofit2.http.POST;
 
 
 /**
- * 项目名称：     PLCX
+ * 项目名称：
  * 文件名：       TMApi
  * 描述：
  * 作者：         胡涛
  * 日期：         2019/1/30
  * 版本：         v1.0
  */
-public interface TMApi {
+public interface ServiceApi {
 
     String IP = "https://madmin.jx.34xian.com";
 

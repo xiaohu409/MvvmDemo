@@ -6,35 +6,35 @@ import retrofit2.Retrofit;
 
 /**
  * 项目名称：     MvvmDemo
- * 文件名：       TMApiManager
+ * 文件名：       ServiceApiManager
  * 描述：
  * 作者：         胡涛
  * 日期：         2019/2/14
  * 版本：         v1.0
  */
-public class TMApiManager {
+public class ServiceApiManager {
 
-    private static TMApiManager apiManager;
+    private static ServiceApiManager apiManager;
 
-    private TMApi api;
+    private ServiceApi api;
 
-    private TMApiManager() {
+    private ServiceApiManager() {
         Retrofit retrofit = RetrofitUtil.newInstance().getRetrofit();
-        api = retrofit.create(TMApi.class);
+        api = retrofit.create(ServiceApi.class);
     }
 
-    public static TMApiManager newInstance() {
+    public static ServiceApiManager newInstance() {
         if (apiManager == null) {
-            synchronized (TMApiManager.class) {
+            synchronized (ServiceApiManager.class) {
                 if (apiManager == null) {
-                    apiManager = new TMApiManager();
+                    apiManager = new ServiceApiManager();
                 }
             }
         }
         return apiManager;
     }
 
-    public TMApi getApi() {
+    public ServiceApi getApi() {
         return api;
     }
 }

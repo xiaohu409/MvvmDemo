@@ -1,11 +1,11 @@
 package com.github.hutao.mvvmdemo.mvvm.viewmodel;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.MutableLiveData;
-import android.support.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.MutableLiveData;
+import androidx.annotation.NonNull;
 
-import com.github.hutao.mvvmdemo.mvvm.model.api.TMApiManager;
+import com.github.hutao.mvvmdemo.mvvm.model.api.ServiceApiManager;
 import com.github.hutao.mvvmdemo.mvvm.model.bean.LoginBean;
 
 import java.util.Map;
@@ -37,7 +37,7 @@ public class LoginViewModel extends AndroidViewModel {
 
     //登录
     public void login(Map<String, Object> param) {
-        TMApiManager.newInstance().getApi().login(param).enqueue(new Callback<LoginBean>() {
+        ServiceApiManager.newInstance().getApi().login(param).enqueue(new Callback<LoginBean>() {
             @Override
             public void onResponse(Call<LoginBean> call, Response<LoginBean> response) {
                 data.setValue(response.body());

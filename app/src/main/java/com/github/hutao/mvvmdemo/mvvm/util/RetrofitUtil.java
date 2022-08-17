@@ -1,7 +1,7 @@
 package com.github.hutao.mvvmdemo.mvvm.util;
 
 import com.github.hutao.mvvmdemo.BuildConfig;
-import com.github.hutao.mvvmdemo.mvvm.model.api.TMApi;
+import com.github.hutao.mvvmdemo.mvvm.model.api.ServiceApi;
 
 import java.util.concurrent.TimeUnit;
 
@@ -35,7 +35,7 @@ public class RetrofitUtil {
 
         retrofit = new Retrofit.Builder()
                 .client(builder.build())
-                .baseUrl(TMApi.IP)
+                .baseUrl(ServiceApi.IP)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .build();
