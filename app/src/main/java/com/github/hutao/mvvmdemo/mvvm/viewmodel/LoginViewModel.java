@@ -1,9 +1,6 @@
 package com.github.hutao.mvvmdemo.mvvm.viewmodel;
 
-import android.app.Application;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 
 import com.github.hutao.mvvmdemo.mvvm.model.api.ServiceApiManager;
@@ -16,7 +13,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * 项目名称：     PLCX
+ * 项目名称：
  * 文件名：       LoginViewModel
  * 描述：
  * 作者：         胡涛

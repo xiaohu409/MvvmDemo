@@ -1,7 +1,7 @@
 package com.github.hutao.mvvmdemo.mvvm.view;
 
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void bindData() {
-        viewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
+        viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
         viewModel.getData().observe(this, new Observer<LoginBean>() {
             @Override
             public void onChanged(@Nullable LoginBean loginBean) {
@@ -70,6 +70,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Map<String, Object> param = new HashMap<>();
             param.put("username", username);
             param.put("password", pass);
+//            viewModel.login(param);
             viewModel.login(param);
         }
     }
