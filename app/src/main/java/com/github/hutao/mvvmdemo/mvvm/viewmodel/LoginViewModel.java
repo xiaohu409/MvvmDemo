@@ -4,6 +4,7 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModel;
 
 import com.github.hutao.mvvmdemo.mvvm.model.api.ServiceApiManager;
 import com.github.hutao.mvvmdemo.mvvm.model.bean.LoginBean;
@@ -22,12 +23,11 @@ import retrofit2.Response;
  * 日期：         2019/1/30
  * 版本：         v1.0
  */
-public class LoginViewModel extends AndroidViewModel {
+public class LoginViewModel extends ViewModel {
 
     private MutableLiveData<LoginBean> data;
 
-    public LoginViewModel(@NonNull Application application) {
-        super(application);
+    public LoginViewModel() {
         data = new MutableLiveData<>();
     }
 
