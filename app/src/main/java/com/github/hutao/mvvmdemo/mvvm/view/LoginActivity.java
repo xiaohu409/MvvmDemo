@@ -70,7 +70,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Map<String, Object> param = new HashMap<>();
             param.put("username", username);
             param.put("password", pass);
-//            viewModel.login(param);
             viewModel.login(param);
         }
     }
